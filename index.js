@@ -4,6 +4,12 @@ const fs = require("fs");
 // require the discord.js module
 const Discord = require("discord.js");
 
+// Used to get local env for testing
+if (process.env.NODE_ENV !== "SERVER")
+{
+	require("dotenv").load();
+}
+
 // extract from config
 const { prefix } = require("./config.json");
 
