@@ -37,7 +37,7 @@ app.get("/", (request, response) =>
 app.listen(process.env.PORT);
 setInterval(() =>
 {
-	http.get("http://${process.env.PROJECT_DOMAIN}.glitch.me/");
+	http.get("http://" + "process.env.PROJECT_DOMAIN + .glitch.me/");
 }, 280000);
 
 // Creates a collection to track cooldowns
