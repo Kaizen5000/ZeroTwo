@@ -5,7 +5,7 @@ const fs = require("fs");
 const Discord = require("discord.js");
 
 // extract from config
-const { prefix, token } = require("./config.json");
+const { prefix } = require("./config.json");
 
 // create a new Discord client
 const client = new Discord.Client();
@@ -26,16 +26,19 @@ for (const file of commandFiles)
 }
 
 // Keep project alive
-const http = require('http');
-const express = require('express');
+const http = require("http");
+const express = require("express");
 const app = express();
-app.get("/", (request, response) => {
-  console.log(Date.now() + " Ping Received");
-  response.sendStatus(200);
+app.get("/", (request, response) =>
+{
+	console.log(Date.now() + " Ping Received");
+	response.sendStatus(200);
+	response.sendFile(__dirname + "/views/index.html");
 });
 app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+setInterval(() =>
+{
+	http.get("http://${process.env.PROJECT_DOMAIN}.glitch.me/");
 }, 280000);
 
 // Creates a collection to track cooldowns
