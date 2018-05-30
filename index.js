@@ -35,6 +35,7 @@ const cooldowns = new Discord.Collection();
 client.on("ready", () =>
 {
 	console.log("Ready!");
+	client.user.setActivity("Franxx Initialised!");
 });
 
 client.on("message", message =>
