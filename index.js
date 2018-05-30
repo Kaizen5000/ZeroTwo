@@ -33,7 +33,6 @@ app.get("/", (request, response) =>
 {
 	console.log(Date.now() + " Ping Received");
 	response.sendStatus(200);
-	response.sendFile(__dirname + "/views/index.html");
 });
 app.listen(process.env.PORT);
 setInterval(() =>
