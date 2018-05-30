@@ -140,14 +140,7 @@ client.on("message", message =>
 	try
 	{
 		// Execute the command
-		if (!args.length)
-		{
-			command.execute(message);
-		}
-		else
-		{
-			command.execute(message, args);
-		}
+		command.execute(message, args);
 	}
 	catch (error)
 	{

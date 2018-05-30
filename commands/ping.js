@@ -6,7 +6,7 @@ module.exports = {
 	// usage: "<enter requirement here>",
 	cooldown: 5,
 	aliases: ["pingaz", "pongs"],
-	execute(message)
+	execute(message, args)
 	{
 		message.channel.send("◕ ◡ ◕");
 	},

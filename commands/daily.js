@@ -6,7 +6,7 @@ module.exports = {
 	args: false,
 	cooldown: 2,
 	aliases: ["art", "manga"],
-	execute(message)
+	execute(message, args)
 	{
 		// Try to get a valid URL 20 times
 		for (let i = 0; i < 20; ++i)
