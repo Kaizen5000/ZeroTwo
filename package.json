@@ -18,7 +18,8 @@
     "node": "8.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
+    "type": "git",
+    "url": "git+https://github.com/Kaizen5000/ZeroTwo"
   },
   "keywords": [
     "node",
