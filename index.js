@@ -25,6 +25,19 @@ for (const file of commandFiles)
 	client.commands.set(command.name, command);
 }
 
+// Keep project alive
+const http = require('http');
+const express = require('express');
+const app = express();
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping Received");
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
+
 // Creates a collection to track cooldowns
 const cooldowns = new Discord.Collection();
 
@@ -136,4 +149,4 @@ client.on("message", message =>
 	}
 });
 // login to Discord with your app's token
-client.login(token);
+client.login(process.env.TOKEN);
