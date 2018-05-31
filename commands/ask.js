@@ -7,10 +7,12 @@ exports.data = {
 	cooldown: 2,
 	aliases: ["question", "decide"],
 };
-exports.execute = async (message, args) =>
+exports.execute = async (client, message, args) =>
 {
 	// Input message
 	const sayMessage = args.join(" ");
+
+	// Array of possible replies
 	const reply = ["Yes", "No", "How silly of you to think so",
 		"What an absurd question! Of course not", "Never", "Yep", "Of course not!",
 		"Signs point to yes", "Don't count on it", "You may rely on it", "Very doubtful",
@@ -21,7 +23,11 @@ exports.execute = async (message, args) =>
 		"Sounds like a conspiracy theory to me", "Never in a million years", "I shiver to think about it",
 		"Please don't make me answer that", "Impossibru", "Only if the world ends tomorrow",
 		"Not a chance", "There is a very small chance"];
+
+	// Get random string from array
 	const result = reply[Math.floor(Math.random() * reply.length)] + "!";
+	
+	// Print result
 	console.log(sayMessage + "\n" + result);
 	message.channel.send(result);
 };

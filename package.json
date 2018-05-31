@@ -11,6 +11,8 @@
   "dependencies": {
     "discord.js": "^11.3.2",
     "dotenv": "^5.0.1",
+    "enmap": "^2.5.2",
+    "enmap-sqlite": "^2.0.1",
     "es6-promise": "^4.2.4",
     "eslint": "^4.19.1",
     "express": "^4.16.3",

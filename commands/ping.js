@@ -7,7 +7,8 @@ exports.data = {
 	cooldown: 5,
 	aliases: ["pingaz", "pongs"],
 };
-exports.execute = async (message, args) =>
+exports.execute = async (client, message, args) =>
 {
+	client.settings.deleteAll();
 	await message.channel.send("◕ ◡ ◕");
 };

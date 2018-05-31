@@ -7,7 +7,7 @@ exports.data = {
 	cooldown: 2,
 	aliases: ["art", "manga"],
 };
-exports.execute = async (message, args) =>
+exports.execute = async (client, message, args) =>
 {
 	// Try to get a valid URL 20 times
 	for (let i = 0; i < 20; ++i)

@@ -8,9 +8,10 @@ exports.data = {
 	usage: "<command name>",
 	cooldown: 5,
 };
-exports.execute = async (message, args) =>
+exports.execute = async (client, message, args) =>
 {
 	const { commands } = message.client;
+	// Reply message
 	const data = [];
 	// Check if there are any arguments
 	if (!args.length) // Display all commands
