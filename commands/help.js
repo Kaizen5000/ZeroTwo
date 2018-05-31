@@ -27,11 +27,11 @@ exports.execute = async (message, args) =>
 			return message.reply("What does that mean?!");
 		}
 		const command = commands.get(args[0]);
-		data.push(`**Name:** ${command.name}`);
-		if (command.description) data.push(`**Description:** ${command.description}`);
-		if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(", ")}`);
-		if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
-		data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
+		data.push(`**Name:** ${command.data.name}`);
+		if (command.data.description) data.push(`**Description:** ${command.data.description}`);
+		if (command.data.aliases) data.push(`**Aliases:** ${command.data.aliases.join(", ")}`);
+		if (command.data.usage) data.push(`**Usage:** ${prefix}${command.data.name} ${command.data.usage}`);
+		data.push(`**Cooldown:** ${command.data.cooldown || 3} second(s)`);
 	}
 	/*
     // DM the person asking for help
