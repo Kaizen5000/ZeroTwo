@@ -85,7 +85,7 @@ client.on("message", async message =>
 	if (command.data.args && !args.length)
 	{
 		// Initial reply
-		let reply = `I"m going to need more information than that, ${message.author}!`;
+		let reply = `I'm going to need more information than that, ${message.author}!`;
 		if (command.data.usage) // If the command has a usage property
 		{
 			// Add new line informing how to use it
