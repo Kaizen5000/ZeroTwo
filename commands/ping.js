@@ -9,6 +9,5 @@ exports.data = {
 };
 exports.execute = async (client, message, args) =>
 {
-	client.settings.deleteAll();
 	await message.channel.send("◕ ◡ ◕");
 };
