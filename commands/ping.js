@@ -1,4 +1,4 @@
-module.exports = {
+exports.data = {
 	name: "ping",
 	description: "Give me a little poke!",
 	guildOnly: false,
@@ -6,8 +6,8 @@ module.exports = {
 	// usage: "<enter requirement here>",
 	cooldown: 5,
 	aliases: ["pingaz", "pongs"],
-	execute(message, args)
-	{
-		message.channel.send("◕ ◡ ◕");
-	},
+};
+exports.execute = async (message, args) =>
+{
+	await message.channel.send("◕ ◡ ◕");
 };

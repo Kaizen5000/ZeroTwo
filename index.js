@@ -28,7 +28,7 @@ for (const file of commandFiles)
 	const command = require(`./commands/${file}`);
 	// set a new item in the Collection
 	// with the key as the command name and the value as the exported module
-	client.commands.set(command.name, command);
+	client.commands.set(command.data.name, command);
 }
 
 // Keep project alive
@@ -59,7 +59,7 @@ client.on("ready", () =>
 	client.user.setActivity("Franxx Initialised!");
 });
 
-client.on("message", message =>
+client.on("message", async message =>
 {
 	// Don"t continue if message is by bot or doesn"t start with prefix
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -71,32 +71,32 @@ client.on("message", message =>
 	const commandName = args.shift().toLowerCase();
 
 	// Use command name to get the command, takes into account all aliases
-	const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+	const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.data.aliases && cmd.data.aliases.includes(commandName));
 	// If there is no command, return
 	if (!command) return;
 
 	// Checks if the command can only be executed in a channel
-	if (command.guildOnly && message.channel.type !== "text")
+	if (command.data.guildOnly && message.channel.type !== "text")
 	{
 		return message.reply("We shouldn't do that privately!");
 	}
 
 	// Check if the command needs argument and ensures the arguments from the user complies
-	if (command.args && !args.length)
+	if (command.data.args && !args.length)
 	{
 		// Initial reply
 		let reply = `I"m going to need more information than that, ${message.author}!`;
-		if (command.usage) // If the command has a usage property
+		if (command.data.usage) // If the command has a usage property
 		{
 			// Add new line informing how to use it
-			reply += `\nYou need to say: \`${prefix}${command.name} ${command.usage}\``;
+			reply += `\nYou need to say: \`${prefix}${command.data.name} ${command.data.usage}\``;
 		}
 		// Send message
 		return message.channel.send(reply);
 	}
 
 	// If the command doesn't have an entry in the cooldowns collection
-	if (!cooldowns.has(command.name))
+	if (!cooldowns.has(command.data.name))
 	{
 		// Add to collection
 		cooldowns.set(command.name, new Discord.Collection());

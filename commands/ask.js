@@ -1,4 +1,4 @@
-module.exports = {
+exports.data = {
 	name: "ask",
 	description: "Ask me a question! (yes/no/maybe)",
 	guildOnly: false,
@@ -6,25 +6,24 @@ module.exports = {
 	usage: "<question>",
 	cooldown: 2,
 	aliases: ["question", "decide"],
-	execute(message, args)
-	{
-		// Input message
-		const sayMessage = args.join(" ");
-
-		const reply = ["Yes", "No", "How silly of you to think so",
-			"What an absurd question! Of course not", "Never", "Yep", "Of course not!",
-			"Signs point to yes", "Don't count on it", "You may rely on it", "Very doubtful",
-			"It is certain", "Without a doubt", "Don't count on it", "Only a baffoon would say yes",
-			"It is within reason", "REEEEEEEE", "Does 2 + 2 = 4? Yeah I thought so", "Yes, if the sun is shining today",
-			"My Magic 8-Ball says yes", "Don't bother me with such trivial questions", "Ask someone who cares",
-			"Google it", "Affirmative", "After intense scientific research, I can confirm it is true",
-			"Sounds like a conspiracy theory to me", "Never in a million years", "I shiver to think about it",
-			"Please don't make me answer that", "Impossibru", "Only if the world ends tomorrow",
-			"Not a chance", "There is a very small chance"];
-		const result = reply[Math.floor(Math.random() * reply.length)] + "!";
-		console.log(sayMessage + "\n" + result);
-		message.channel.send(result);
-	},
+};
+exports.execute = async (message, args) =>
+{
+	// Input message
+	const sayMessage = args.join(" ");
+	const reply = ["Yes", "No", "How silly of you to think so",
+		"What an absurd question! Of course not", "Never", "Yep", "Of course not!",
+		"Signs point to yes", "Don't count on it", "You may rely on it", "Very doubtful",
+		"It is certain", "Without a doubt", "Don't count on it", "Only a baffoon would say yes",
+		"It is within reason", "REEEEEEEE", "Does 2 + 2 = 4? Yeah I thought so", "Yes, if the sun is shining today",
+		"My Magic 8-Ball says yes", "Don't bother me with such trivial questions", "Ask someone who cares",
+		"Google it", "Affirmative", "After intense scientific research, I can confirm it is true",
+		"Sounds like a conspiracy theory to me", "Never in a million years", "I shiver to think about it",
+		"Please don't make me answer that", "Impossibru", "Only if the world ends tomorrow",
+		"Not a chance", "There is a very small chance"];
+	const result = reply[Math.floor(Math.random() * reply.length)] + "!";
+	console.log(sayMessage + "\n" + result);
+	message.channel.send(result);
 };
 /*
 TRADITIONAL MAGIC 8BALL
