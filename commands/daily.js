@@ -5,7 +5,7 @@ exports.data = {
 	guildOnly: false,
 	args: false,
 	cooldown: 2,
-	aliases: ["art", "manga"],
+	aliases: ["manga"],
 };
 exports.execute = async (client, message, args) =>
 {
