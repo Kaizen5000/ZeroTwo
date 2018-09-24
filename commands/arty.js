@@ -25,7 +25,8 @@ exports.execute = async (client, message, args) =>
 		"https://www.reddit.com/r/KuroiHada/",
 		"https://www.reddit.com/r/waifusgonewild/",
 		"https://www.reddit.com/r/dekaihentai/",
-		"https://www.reddit.com/r/bowsette/"];
+		"https://www.reddit.com/r/bowsette/",
+		"https://www.reddit.com/r/rule34/"];
 	let http = new XMLHttpRequest();
 	// Get random post from hentai subreddit
 	const sourceIndex = Math.floor(Math.random() * source.length);
