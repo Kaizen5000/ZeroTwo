@@ -1,35 +1,17 @@
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 exports.data = {
-	name: "arty",
+	name: "bowsette",
 	description: "I give you some daily material!",
 	guildOnly: false,
 	args: false,
 	cooldown: 2,
-	aliases: ["art", "art2"],
+	aliases: ["bowser"],
 };
 exports.execute = async (client, message, args) =>
 {
-	const source = ["https://www.reddit.com/r/hentai/",
-		"https://www.reddit.com/r/Overwatch_Porn/",
-		"https://www.reddit.com/r/Rule34Overwatch/",
-		"https://www.reddit.com/r/skindentation/",
-		"https://www.reddit.com/r/tanime/",
-		"https://www.reddit.com/r/thighdeology/",
-		"https://www.reddit.com/r/thighhighhentai/",
-		"https://www.reddit.com/r/ecchi/",
-		"https://www.reddit.com/r/thick_hentai/",
-		"https://www.reddit.com/r/rule34/",
-		"https://www.reddit.com/r/HENTAI_GIF/",
-		"https://www.reddit.com/r/pantsu/",
-		"https://www.reddit.com/r/WesternHentai/",
-		"https://www.reddit.com/r/KuroiHada/",
-		"https://www.reddit.com/r/waifusgonewild/",
-		"https://www.reddit.com/r/dekaihentai/",
-		"https://www.reddit.com/r/bowsette/"];
 	let http = new XMLHttpRequest();
-	// Get random post from hentai subreddit
-	const sourceIndex = Math.floor(Math.random() * source.length);
-	const url = source[sourceIndex];
+
+	const url = "https://www.reddit.com/r/bowsette/";
 	// Establish connection to website
 	http = new XMLHttpRequest();
 	http.onreadystatechange = function()
