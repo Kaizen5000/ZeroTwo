@@ -61,7 +61,7 @@ const cooldowns = new Discord.Collection();
 client.on("ready", () =>
 {
 	console.log("Ready!");
-	client.user.setActivity("Franxx Initialised!");
+	client.user.setActivity("Bowsette is best waifu!");
 });
 
 client.on("message", async message =>
